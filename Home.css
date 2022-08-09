@@ -231,6 +231,7 @@ margin: 30px;
 padding-left: 30px;
 padding-right: 30px;
 font-family: tahoma;
+color:var(--main-bg);
 }
 
 .mobile-menu ul li{
