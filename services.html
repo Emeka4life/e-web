@@ -1,23 +1,259 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
-	<style>
-		body {
-		display: flex;
-		justify-content: center;
-		align-content: center;
-		align-items: center;
-		height: 100vh;
-		}
-		h1 {
-        text-align: center;
-		}
-	</style>
-</head>
-<body>
-	<h1>SERVICE PAGE COMING SOON...</h1>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-web Services</title>
+    <style>
+      .swiper-container {
+        width: inherit;
+        height: inherit;
+        /*padding: 40px !important;*/
+      }
+
+      .swiper-button-next,
+      .swiper-button-prev {
+        --swiper-navigation-size: 20px !important;
+      }
+
+      .swiper-slide .slider__images img {
+        /*width: 300px;*/
+        width: 100%;
+        object-fit: cover;
+        height: 300px;
+      }
+
+      @media screen and (min-width: 900px) {
+        .swiper-button-next,
+        .swiper-button-prev {
+          --swiper-navigation-size: 30px !important;
+        }
+      }
+
+      .switch {
+        position: relative;
+        display: inline-block;
+        width: 40px;
+        height: 22.5px;
+      }
+
+      .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+
+      .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        -webkit-transition: 0.4s;
+        transition: 0.4s;
+      }
+
+      .slider:before {
+        position: absolute;
+        content: "";
+        height: 15px;
+        width: 15px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        -webkit-transition: 0.4s;
+        transition: 0.4s;
+      }
+
+      .slider:after {
+      }
+
+      input:checked + .slider {
+        background-color: #2196f3;
+      }
+
+      input:focus + .slider {
+        box-shadow: 0 0 1px #2196f3;
+      }
+
+      input:checked + .slider:before {
+        -webkit-transform: translateX(15px);
+        -ms-transform: translateX(15px);
+        transform: translateX(15px);
+      }
+
+      .slider.round {
+        border-radius: 34px;
+      }
+
+      .slider.round:before {
+        border-radius: 50%;
+      }
+
+      .SpinnerLoader:not([hidden]) {
+        display: grid;
+        place-items: center;
+        height: inherit;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .SpinnerLoader::after {
+        content: "";
+        width: var(--sz, 30px);
+        height: var(--sz, 30px);
+        border: var(--bor-w, 2px) solid var(--svg-blue);
+        border-top: var(--bor-w, 3px) solid var(--white-2);
+        border-radius: 100%;
+        will-change: transform;
+        animation: spin 1s infinite linear;
+      }
+
+      @keyframes spin {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+    <link rel="stylesheet" href="./swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./general.css" />
+    <link rel="stylesheet" href="./Home.css" />
+  </head>
+  <body class="dark-mode">
+    <!-- <body> -->
+    <header id="page-header">
+      <div id="hamburger-icon" class="hide">
+        <svg class="svg-icons">
+          <use xlink:href="#menu-i"></use>
+        </svg>
+      </div>
+      <div id="logo-icon">
+        <span id="E-logo">E</span><span id="web-logo">Web</span>
+      </div>
+      <div class="desk-menu show">
+        <ul>
+          <li><a href="./home.html" id="home-page">Home</a></li>
+          <li class="active">
+            <a href="./Services.html" id="service-page">Services</a>
+          </li>
+          <li><a href="./our-work.html" id="work-page">Our Works</a></li>
+          <li><a href="./contact.html" id="contact-page">Contact Us</a></li>
+          <li><a href="./about.html" id="about-page">About Us</a></li>
+        </ul>
+      </div>
+      <div id="search-icon">
+        <label class="switch">
+          <input type="checkbox" checked />
+          <span class="slider round"></span>
+        </label>
+      </div>
+    </header>
+
+    <div id="title"></div>
+
+    <!--*******************FOOTER CONTENT******************** -->
+    <footer id="footer-content">
+      <div class="footer-sub one">
+        <div id="logo-icon">
+          <span id="E-logo">E</span><span id="web-logo">Web</span>
+        </div>
+
+        <div class="Copyright">Copyright &copy; 2022</div>
+      </div>
+      <div class="footer-sub two">
+        <div class="footer-sub-two sign-up">
+          <div class="sign-up-desc">Sign up to our Newsletter</div>
+          <form action="#">
+            <label>
+              <input type="email" name="" placeholder="Enter email here" />
+            </label>
+            <button type="submit" disabled title="Enter your email please">
+              Subscribe
+            </button>
+          </form>
+        </div>
+
+        <div class="footer-sub-two markthavalor">
+          <span>Created by</span> &nbsp; <a href="#">MarkThaValor</a> &nbsp;
+          <span>and Made with</span> <img src="./love.gif" />
+        </div>
+      </div>
+      <div class="footer-sub three">
+        <div class="social-imgs" title="Facebook">
+          <a
+            href="https://web.facebook.com/profile.php?id=100074895136127"
+            target="blank"
+            ><img src="./facebook.png"
+          /></a>
+        </div>
+        <div class="social-imgs" title="Twitter">
+          <a href=""><img src="./twitter.png" /></a>
+        </div>
+        <div class="social-imgs" title="Whatsapp">
+          <a href=""><img src="./whatsapp.png" /></a>
+        </div>
+        <div class="social-imgs" title="lindln">
+          <a href=""><img src="./lindln.png" /></a>
+        </div>
+      </div>
+    </footer>
+    <!--*******************FOOTER CONTENT******************** -->
+
+    <div id="mobile-sidebar">
+      <div id="close-mob-sidebar" title="close">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          title="close"
+        >
+          <circle cx="12" cy="12" r="10" opacity=".35" />
+          <path
+            d="M14.812,16.215L7.785,9.188c-0.384-0.384-0.384-1.008,0-1.392l0.011-0.011c0.384-0.384,1.008-0.384,1.392,0l7.027,7.027c0.384,0.384,0.384,1.008,0,1.392l-0.011,0.011C15.82,16.599,15.196,16.599,14.812,16.215z"
+          />
+          <path
+            d="M7.785,14.812l7.027-7.027c0.384-0.384,1.008-0.384,1.392,0l0.011,0.011c0.384,0.384,0.384,1.008,0,1.392l-7.027,7.027c-0.384,0.384-1.008,0.384-1.392,0l-0.011-0.011C7.401,15.82,7.401,15.196,7.785,14.812z"
+          />
+        </svg>
+      </div>
+      <div class="mobile-menu">
+        <ul>
+          <li><a href="./home.html">Home</a></li>
+          <li class="active"><a href="./services.html">Services</a></li>
+          <li><a href="./our-work.html">Our Works</a></li>
+          <li><a href="./contact.html">Contact Us</a></li>
+          <li><a href="./about.html">About Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <!--***********************SEACH POP-UP*************************** -->
+    <!-- <div id="search-content">
+<div id="close-search" title="close">
+     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" title="close">
+  <circle cx="12" cy="12" r="10" opacity=".75" />
+  <path d="M14.812,16.215L7.785,9.188c-0.384-0.384-0.384-1.008,0-1.392l0.011-0.011c0.384-0.384,1.008-0.384,1.392,0l7.027,7.027c0.384,0.384,0.384,1.008,0,1.392l-0.011,0.011C15.82,16.599,15.196,16.599,14.812,16.215z" />
+  <path d="M7.785,14.812l7.027-7.027c0.384-0.384,1.008-0.384,1.392,0l0.011,0.011c0.384,0.384,0.384,1.008,0,1.392l-7.027,7.027c-0.384,0.384-1.008,0.384-1.392,0l-0.011-0.011C7.401,15.82,7.401,15.196,7.785,14.812z"  />
+</svg>
+</div>
+<div id="search-content--inner">
+<h1>SEARCH CONTENT COMING SOON...</h1>
+</div>
+</div>
+ -->
+
+    <button id="contact-info-btn"></button>
+    <div id="contact-info">CONTACT US ON</div>
+    <svg id="svg-icons" style="display: none"></svg>
+
+    <!--***********************SEACH POP-UP*************************** -->
+    <script src="./swiper-bundle.min.js"></script>
+    <script src="./functions.js"></script>
+    <script src="./Home.js"></script>
+    <script src="./svg.icons.js"></script>
+  </body>
 </html>
